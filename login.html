@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sign Up</title>
+    <title>Log In</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">    
@@ -13,11 +13,8 @@
         <div class="site_name">SITE NAME</div>  <!--website name in box-->
       </div>
     
-    <form action="signup_process.php" method="post" id="signup" novalidate>  <!--processes form when submitted; where data is sent when form is submitted-->
-        <div>
-            <label for="name">Username:</label>
-            <input type="name" id="name" name="name">
-        </div>
+     <!--processes form when submitted; where data is sent when form is submitted-->
+     <form action="#" method="post" id="login" novalidate>
         <div>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
@@ -28,12 +25,7 @@
             <input type="password" id="password" name="password">
         </div>
         
-        <div>
-            <label for="password_confirmation">Re-enter password:</label>                  <!--need to re-enter password because characters are hidden when user inputs characters -->
-            <input type="password" id="password_confirmation" name="password_confirmation">
-        </div>
-        
-        <button type="submit">Sign up</button>
+        <button type="submit">Log In</button>
     </form>
 
 </body>
