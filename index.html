@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Chat</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css"> 
+
 </head>
 <body>
-    <div id="chat-container">
-        <ul id="messages"></ul>
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button id="send-button">Send</button>
-    </div>
-    <script src="js/script.js"></script>
+
+  <div class="container">
+    <h2>Welcome</h2>
+    <a href="signup.html" class="button">Sign Up</a>  <!--link to signup page-->
+    <a href="login.html" class="button">Login</a>     <!--link to login page-->
+  </div>
+  <div class="text_box">
+    <div class="site_name">SITE NAME</div>  <!--website name in box-->
+  </div>
+
+
 </body>
 </html>
+
+
+<style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .text_box {
+      vertical-align: top;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid black; 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: absolute; 
+      top: 0;
+      left: 10;
+      width: 350px;
+    }
+
+    .container {
+      text-align: center;
+      color: blue;
+    }
+
+
+    .button {
+      display: block;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      text-decoration: none;
+      color: red;
+      background-color: white; 
+      border-color: black;
+      transition: background-color 0.3s ease;
+      border: 2px solid red; 
+    }
+
+
+    .button:hover {
+      background-color: #cbcecf; /* color to change when hovering over signup/login buttons */
+    }
+  </style>
