@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">    
-    
+    <script src="/js/validation.js" defer></script>
+    <script src="https://unpkg.com/just-validate@2.4.0/dist/js/just-validate.min.js" defer></script>
+
 </head>
 <body>
     
     <div class="text_box">
-        <div class="site_name">SITE NAME</div>  <!--website name in box-->
+        <div class="site_name">EaseMind</div>  <!--website name in box-->
       </div>
     
     <form action="signup_process.php" method="post" id="signup" novalidate>  <!--processes form when submitted; where data is sent when form is submitted-->
@@ -18,6 +20,7 @@
             <label for="name">Username:</label>
             <input type="name" id="name" name="name">
         </div>
+        <div id="name-error" class="error-message"></div>
         <div>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
