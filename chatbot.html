@@ -1,59 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Chat</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div id="chat-container">
-        <ul id="messages"></ul>
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button id="send-button">Send</button>
+      <ul id="messages"></ul>
+      <input
+        type="text"
+        id="message-input"
+        placeholder="Type your message..."
+      />
+      <button id="send-button">Send</button>
     </div>
     <div>
-        <p><a href="logout.php" class= "button">Log out</a></p>
+      <p><a href="" class="chatButton">Helpline Information</a></p>
+      <p><a href="" class="chatButton">Resources Near Me</a></p>
+      <p><a href="" class="chatButton">Positive Quote</a></p>
+    </div>
+    <div>
+      <p><a href="logout.php" class="button">Log out</a></p>
     </div>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
 
 <style>
-    body {
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
+  }
 
-#chat-container {
+  #chat-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-}
+    border-radius: 50px;
+    transform: translateY(600%);
+  }
 
-#messages {
+  #messages {
     list-style-type: none;
     padding: 0;
-}
+  }
 
-#messages li {
+  #messages li {
     margin-bottom: 10px;
-}
-.button {
-      display: block;
-      padding: 10px 20px;
-      margin: 10px auto;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: red;
-      background-color: white; 
-      border-color: black;
-      transition: background-color 0.3s ease;
-      border: 2px solid black; 
-      width: 90px;
-    }
+  }
+
+  .chatButton {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    width: 90px;
+    transform: translateY(175px) translateX(40px);
+    border-radius: 25%;
+    justify-content: center;
+  }
+  .button {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #0792ee;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    width: 90px;
+    transform: translateY(500px) translateX(40px);
+    border-radius: 25%;
+  }
 </style>
