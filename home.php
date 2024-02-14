@@ -45,16 +45,23 @@ if (isset($_SESSION["user_id"])) {
 .button {
       display: block;
       padding: 10px 20px;
-      margin: 10px;
+      margin: 10px auto;
       font-size: 16px;
+      text-align: center;
       text-decoration: none;
       color: red;
       background-color: white; 
       border-color: black;
       transition: background-color 0.3s ease;
       border: 2px solid black; 
-      width: 150px;
+      width: 90px;
+    }
+    h1 {
+        text-align: center;
     }
 
+    p{
+        text-align: center;
+    }
 </style>
 

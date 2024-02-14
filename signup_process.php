@@ -43,7 +43,6 @@ $stmt->bind_param("sss",
                   $password_hash);
 
 if ($stmt->execute()) {     //prevents emails to be duplicated upon signup
-   
     header("Location: signup-success.html");
     exit;
     

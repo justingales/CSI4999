@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
       </div>
       
       
-    
+    <div class="container">
      <!--processes form when submitted; where data is sent when form is submitted-->
      <?php if ($is_invalid): ?>
         <em>Invalid login</em>
@@ -69,10 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
             <input type="password" id="password" name="password">
         </div>
         <button>Log in</button>
-        <!--<a href="chatbot.html" class="button">Log In</a>--> <!--link to chatbot-->
         
     </form>
 
+    <a href="forgot-password.php">Forgot password?</a>
+</div>
 </body>
 </html>
 
@@ -87,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
     }
 
     .text_box {
-        vertical-align: top;
+        vertical-align: top center;
         text-align: center;
         padding: 20px;
         border: 2px solid black; 
@@ -103,9 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
     }
 
     form {
-        width: 300px; 
+        width: 400px ; 
     }
 
+    
     label {
         display: block;
         margin-bottom: 8px;
@@ -118,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
         margin-bottom: 16px;
     }
 
-    .button {
+    button {
         background-color: white;
         color: red;
         padding: 10px 20px;
