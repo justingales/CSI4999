@@ -11,17 +11,27 @@
       defer
     ></script>
   </head>
-  <a href="" class="aboutButton">About Us</a>
-  <a href="" class="resourceButton">Resources</a>
+
   <body>
+    <a href="" class="aboutButton">About Us</a>
+
+    <img
+      class="logo"
+      src="EaseMindLogo.png"
+      alt="EaseMind Logo"
+      style="width: 200px; height: 200px"
+    />
+
+    <a href="" class="resourceButton">Resources</a>
+
     <div class="text_box">
-      <div class="site_name">EaseMind</div>
+      <div class="site_name" style="font-size: 90px">EaseMind</div>
       <!--website name in box-->
     </div>
 
     <form action="signup_process.php" method="post" id="signup" novalidate>
       <!--processes form when submitted; where data is sent when form is submitted-->
-
+    <div class="userInput">
       <div>
         <label for="name">Name:</label>
         <input type="name" id="name" name="name" />
@@ -48,6 +58,7 @@
 
       <button type="submit">Sign up</button>
     </form>
+</div>
   </body>
 </html>
 
@@ -58,17 +69,13 @@
     justify-content: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    width: 2000px;
   }
 
   .text_box {
     vertical-align: top;
     text-align: center;
-    padding: 20px;
-    position: absolute;
-    top: 100px;
-    left: 10;
-    width: 350px;
+    transform: translateX(-750px) translateY(-90px);
   }
 
   .site_name {
@@ -85,7 +92,9 @@
     padding: 10px 20px;
     margin: 10px;
     font-size: 16px;
-    transform: translateY(-550%) translateX(0%);
+    width: 800px;
+    text-align: center;
+    transform: translateY(-190px) translateX(100px);
     text-decoration: none;
     color: black;
     background-color: white;
@@ -93,12 +102,19 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     border-radius: 25px;
+    align-items: center;
+  }
+
+  .logo {
+    transform: translateY(-215px) translateX(100px);
   }
 
   .resourceButton {
     display: block;
     padding: 10px 20px;
-    transform: translateY(-550%) translateX(260%);
+    width: 800px;
+    text-align: center;
+    transform: translateY(-190px) translateX(100px);
     margin: 10px;
     font-size: 16px;
     text-decoration: none;
@@ -108,6 +124,11 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     border-radius: 25px;
+  }
+
+  .userInput {
+    transform: translateY(140px) translateX(-950px);
+    width: 350px;
   }
 
   h1 {
