@@ -18,14 +18,34 @@
       <!--website name in box-->
     </div>
 
+    <img
+      class="outputIcon"
+      src="outputIcon.png"
+      alt="output Icon"
+      style="width: 200px; height: 200px"
+    />
+
+    <div class="output">
+      <textarea
+        name="outputBox"
+        id="message-output"
+        placeholder=""
+        cols="105"
+        rows="15"
+      ></textarea>
+    </div>
+
     <div id="chat-container">
       <ul id="messages"></ul>
       <input
+        class="inputBox"
         type="text"
         id="message-input"
         placeholder="Type your message..."
       />
-      <button id="send-button">Send</button>
+      <div class="sendButton">
+        <button id="send-button">Send</button>
+      </div>
     </div>
     <div>
       <p><a href="" class="helplinechatButton">Helpline Information</a></p>
@@ -33,7 +53,7 @@
       <p><a href="" class="qoutechatButton">Positive Quote</a></p>
     </div>
     <div>
-      <p><a href="logout.php" class="button">Log out</a></p>
+      <p><a href="logout.php" class="logoutButton">Log out</a></p>
     </div>
     <script src="js/script.js"></script>
   </body>
@@ -47,12 +67,28 @@
     width: 2600px;
   }
 
+  .outputIcon {
+    transform: translateX(1300px) translateY(-75px);
+  }
+
+  .output {
+    transform: translateX(580px) translateY(-125px);
+  }
+
   #chat-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 50px;
-    transform: translateY(600%);
+    transform: translateY(-115px) translateX(-975px);
+  }
+
+  .inputBox {
+    width: 500px;
+  }
+
+  .sendButton {
+    transform: translateX(515px) translateY(-21px);
   }
 
   .logo {
@@ -88,8 +124,8 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     width: 200px;
-    transform: translateY(175px) translateX(-600px);
-    border-radius: 25%;
+    transform: translateY(-250px) translateX(-600px);
+    border-radius: 45%;
     justify-content: center;
   }
 
@@ -106,8 +142,8 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     width: 200px;
-    transform: translateY(117px) translateX(-350px);
-    border-radius: 25%;
+    transform: translateY(-307px) translateX(-350px);
+    border-radius: 45%;
     justify-content: center;
   }
 
@@ -124,12 +160,12 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     width: 200px;
-    transform: translateY(59px) translateX(-99px);
-    border-radius: 25%;
+    transform: translateY(-365px) translateX(-99px);
+    border-radius: 45%;
     justify-content: center;
   }
 
-  .button {
+  .logoutButton {
     display: block;
     padding: 10px 20px;
     margin: 10px auto;
@@ -142,7 +178,7 @@
     transition: background-color 0.3s ease;
     border: 2px solid black;
     width: 90px;
-    transform: translateY(500px) translateX(40px);
+    transform: translateY(-380px) translateX(150px);
     border-radius: 25%;
   }
 </style>
