@@ -6,7 +6,18 @@
     <title>Simple Chat</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <img
+    class="logo"
+    src="EaseMindLogo.png"
+    alt="EaseMind Logo"
+    style="width: 200px; height: 200px"
+  />
   <body>
+    <div class="text_box">
+      <div class="site_name" style="font-size: 90px">EaseMind</div>
+      <!--website name in box-->
+    </div>
+
     <div id="chat-container">
       <ul id="messages"></ul>
       <input
@@ -17,9 +28,9 @@
       <button id="send-button">Send</button>
     </div>
     <div>
-      <p><a href="" class="chatButton">Helpline Information</a></p>
-      <p><a href="" class="chatButton">Resources Near Me</a></p>
-      <p><a href="" class="chatButton">Positive Quote</a></p>
+      <p><a href="" class="helplinechatButton">Helpline Information</a></p>
+      <p><a href="" class="resourcechatButton">Resources Near Me</a></p>
+      <p><a href="" class="qoutechatButton">Positive Quote</a></p>
     </div>
     <div>
       <p><a href="logout.php" class="button">Log out</a></p>
@@ -33,6 +44,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 2600px;
   }
 
   #chat-container {
@@ -41,6 +53,17 @@
     padding: 20px;
     border-radius: 50px;
     transform: translateY(600%);
+  }
+
+  .logo {
+    transform: translateX(650px);
+  }
+
+  .text_box {
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(-550px) translateY(-25px);
+    color: hwb(195 2% 2%);
   }
 
   #messages {
@@ -52,7 +75,7 @@
     margin-bottom: 10px;
   }
 
-  .chatButton {
+  .helplinechatButton {
     display: block;
     padding: 10px 20px;
     margin: 10px auto;
@@ -64,11 +87,48 @@
     border-color: black;
     transition: background-color 0.3s ease;
     border: 2px solid black;
-    width: 90px;
-    transform: translateY(175px) translateX(40px);
+    width: 200px;
+    transform: translateY(175px) translateX(-600px);
     border-radius: 25%;
     justify-content: center;
   }
+
+  .resourcechatButton {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    width: 200px;
+    transform: translateY(117px) translateX(-350px);
+    border-radius: 25%;
+    justify-content: center;
+  }
+
+  .qoutechatButton {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    width: 200px;
+    transform: translateY(59px) translateX(-99px);
+    border-radius: 25%;
+    justify-content: center;
+  }
+
   .button {
     display: block;
     padding: 10px 20px;
