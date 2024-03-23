@@ -28,19 +28,31 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 }
 
 ?>
+
 <!DOCTYPE html>
-<html>
-<head>
-    
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reset Password</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet">
-</head>
-<body>
-<div class="text_box">
-        <div class="site_name">Easemind</div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+  
+
+    <img
+      class="logo"
+      src="EaseMindLogo.png"
+      alt="EaseMind Logo"
+      style="width: 200px; height: 200px"
+    />
+
+    <div class="text_box">
+      <div class="site_name" style="font-size: 90px">EaseMind</div>
+      <!--website name in box-->
     </div>
 
+ 
     <form method="post" action="process-reset-password.php">
         <h1>Reset Password</h1>
         <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
@@ -54,65 +66,33 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 
         <button>Send</button>
     </form>
-
-</body>
+  </body>
 </html>
 
 <style>
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+  }
+  form{
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(-900px) translateY(-90px);
+    color: hwb(195 2% 2%);
+  }
+  .text_box {
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(250px) translateY(-90px);
+    color: hwb(195 2% 2%);
+  }
 
-    .text_box {
-        vertical-align: top center;
-        text-align: center;
-        padding: 20px;
-        border: 2px solid black; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        position: absolute; 
-        top: 0;
-        left: 10;
-        width: 350px;
-    }
+  .logo {
+    transform: translateY(-215px) translateX(520px);
+  }
 
-    .h1 {
-        text-align: center;
-
-    }
-
-    form {
-        width: 400px ; 
-    }
-
-    
-    label {
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    input {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-        margin-bottom: 16px;
-    }
-
-    button {
-        background-color: white;
-        color: red;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border: 2px solid red; 
-    }
-
-    button:hover {
-        background-color: #e9eff1;
-    }
-    
 </style>

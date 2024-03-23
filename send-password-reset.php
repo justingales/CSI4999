@@ -47,5 +47,59 @@ if ($mysqli->affected_rows) {
 
 }
 
-echo "Message sent, please check your inbox.";
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+  }
+
+  .text_box {
+    vertical-align: center ;
+    text-align: center;
+    transform: translateX(-110px) translateY(-35px);
+    color: hwb(195 2% 2%);
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    transform: translateY(-200px) translateX(175px);
+  }
+
+  p{
+    color:rgb(22, 130, 156);
+  }
+</style>
+
+</head>
+<body>
+    
+<img
+  class="logo"
+  src="EaseMindLogo.png"
+  alt="EaseMind Logo"
+  style="width: 200px; height: 200px"
+/>
+
+
+<div class="text_box">
+  <div class="site_name" style="font-size: 90px">EaseMind</div>
+  <!--website name in box-->
+  <p>Message sent, please check your inbox.</p>
+</div>
+
+</body>
+</html>
 

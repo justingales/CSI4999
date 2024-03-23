@@ -1,56 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up Successful</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">    
-    
-</head>
-<body>
-    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+ 
+    <img
+      class="logo"
+      src="EaseMindLogo.png"
+      alt="EaseMind Logo"
+      style="width: 200px; height: 200px"
+    />
+
     <div class="text_box">
-        <div class="site_name">EaseMind</div>  <!--website name in box-->
-    </div>
+      <div class="site_name" style="font-size: 90px">EaseMind</div>
+      <!--website name in box-->
 
       <p>Signup Successful!
-       Please check your email to activate your account.</p>
-
-</body>
+        Please check your email to activate your account.</p>
+    </div>
+    
+   
+  </body>
 </html>
 
 <style>
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+  }
 
-    .text_box {
-        vertical-align: top;
-        text-align: center;
-        padding: 20px;
-        border: 2px solid black; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        position: absolute; 
-        top: 0;
-        left: 10;
-        width: 350px;
-    }
-    .site_name {
-    font-size: 36px; 
-    font-weight: bold;
-}
-    .container {
-      text-align: center;
-      color: blue;
-    }
-    
-    h1 {
-        text-align: center;
-    }
-    
+  .text_box {
+    vertical-align: center ;
+    text-align: center;
+    transform: translateX(-110px) translateY(-35px);
+    color: hwb(195 2% 2%);
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    transform: translateY(-200px) translateX(200px);
+  }
+
+  p{
+    color:rgb(22, 130, 156);
+  }
 </style>
