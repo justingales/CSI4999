@@ -2,7 +2,7 @@
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = sprintf("SELECT * FROM user      //check user table to see if record exists with given email 
+$sql = sprintf("SELECT * FROM user      
                 WHERE email = '%s'",
                 $mysqli->real_escape_string($_GET["email"]));
                 

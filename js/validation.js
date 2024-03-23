@@ -43,6 +43,6 @@ validation
         }
     ])
     .onSuccess((event) => {
-        event.preventDefault();
+       // event.preventDefault();
         document.getElementById("signup").submit();
     });

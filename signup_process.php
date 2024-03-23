@@ -1,15 +1,15 @@
 <?php
 
-if (empty($_POST["name"])) {    //makes sure a username is entered
+if (empty($_POST["name"])) {
     die("Name is required");
 }
 
 if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("A valid email is required");     //returns false if email address is not valid 
+    die("Valid email is required");
 }
 
 if (strlen($_POST["password"]) < 8) {
-    die("Password must be at least 8 characters");  //8 char password with one letter and one number
+    die("Password must be at least 8 characters");
 }
 
 if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
@@ -21,28 +21,57 @@ if ( ! preg_match("/[0-9]/", $_POST["password"])) {
 }
 
 if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    die("Passwords must match");                    //validates the passwords match
+    die("Passwords must match");
 }
 
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT); //hashing the password to protect against hackers
+$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+$activation_token = bin2hex(random_bytes(16));
+
+$activation_token_hash = hash("sha256", $activation_token);
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO user (name, email, password_hash)
-        VALUES (?, ?, ?)";
+$sql = "INSERT INTO user (name, email, password_hash, account_activation_hash)
+        VALUES (?, ?, ?, ?)";
         
-$stmt = $mysqli->stmt_init(); 
+$stmt = $mysqli->stmt_init();
 
 if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sss",
+$stmt->bind_param("ssss",
                   $_POST["name"],
                   $_POST["email"],
-                  $password_hash);
+                  $password_hash,
+                  $activation_token_hash);
+                  
+if ($stmt->execute()) {
 
-if ($stmt->execute()) {     //prevents emails to be duplicated upon signup
+    $mail = require __DIR__ . "/mailer.php";
+
+    $mail->setFrom("noreply@example.com", "no-reply");
+    $mail->addAddress($_POST["email"]);
+    $mail->Subject = "Account Activation";
+    $mail->Body = <<<END
+
+    Click <a href="http://localhost/Github/CSI4999/activate_account.php?token=$activation_token">here</a> 
+    to activate your account.
+
+    END;
+
+    try {
+
+        $mail->send();
+
+    } catch (Exception $e) {
+
+        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+        exit;
+
+    }
+
     header("Location: signup-success.html");
     exit;
     

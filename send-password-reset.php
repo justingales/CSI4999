@@ -6,7 +6,7 @@ $token = bin2hex(random_bytes(16));
 
 $token_hash = hash("sha256", $token);
 
-$expiry = date("Y-m-d H:i:s", time() + 60 * 30);  //prevents brute force attack
+$expiry = date("Y-m-d H:i:s", time() + 60 * 30);  //prevents brute force attack using an expirey.
 
 $mysqli = require __DIR__ . "/database.php";
 
@@ -20,4 +20,32 @@ $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("sss", $token_hash, $expiry, $email); //3 string parameters
 
 $stmt->execute();
+
+if ($mysqli->affected_rows) {
+
+    $mail = require __DIR__ . "/mailer.php";
+
+    $mail->setFrom('noreply@gmail.com', 'no-reply');
+    $mail->addAddress($email);
+    $mail->Subject = "Password Reset";
+    $mail->Body = <<<END
+
+    Click <a href="http://localhost/Github/CSI4999/reset-password.php?token=$token">here</a> 
+    to reset your password.
+
+    END;
+
+    try {
+
+        $mail->send();
+
+    } catch (Exception $e) {
+
+        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+
+    }
+
+}
+
+echo "Message sent, please check your inbox.";
 
