@@ -70,6 +70,7 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 </html>
 
 <style>
+  
   body {
     display: flex;
     align-items: center;
@@ -78,21 +79,54 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     margin: 0;
     width: 100%;
   }
+  button {
+    display: block;
+    text-align: center;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #0792ee;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    border-radius: 25px;
+  }
+  h1 {
+    font-size: 20px;
+    color: black;
+    text-align: left; 
+  }
   form{
     vertical-align: top;
     text-align: center;
-    transform: translateX(-900px) translateY(-90px);
-    color: hwb(195 2% 2%);
+    transform: translateX(-360px) translateY(80px);
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
   }
+
+  form label,
+  form input {
+    display: block; /* Set display to block to stack elements */
+    text-align: left;
+    margin-bottom: 10px;
+    width: 230px;
+    height: 20px;
+  }
+ 
   .text_box {
     vertical-align: top;
     text-align: center;
-    transform: translateX(250px) translateY(-90px);
+    transform: translateX(-15px) translateY(-90px);
     color: hwb(195 2% 2%);
   }
 
   .logo {
-    transform: translateY(-215px) translateX(520px);
+    transform: translateY(-215px) translateX(260px);
   }
 
 </style>
