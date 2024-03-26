@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 $token = $_GET["token"];
 
 $token_hash = hash("sha256", $token);

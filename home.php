@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 session_start();
 
 if (isset($_SESSION["user_id"])) { 
@@ -41,6 +41,10 @@ if (isset($_SESSION["user_id"])) {
 </body>
 </html>
 <style>
+    
+body{
+    width: 100%;
+}
 
 .button {
       display: block;

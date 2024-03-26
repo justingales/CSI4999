@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 $mysqli = require __DIR__ . "/database.php";
 
 $sql = sprintf("SELECT * FROM user      

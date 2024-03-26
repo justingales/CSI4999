@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 $host = "localhost";
 $dbname = "login_db";
 $username = "root";

@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been submitted

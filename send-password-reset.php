@@ -1,5 +1,5 @@
 <?php
-
+//Ashley Murad
 $email = $_POST["email"];
 
 $token = bin2hex(random_bytes(16));
