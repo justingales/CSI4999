@@ -34,103 +34,117 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Log In</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">    
-    
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="text_box">
-        <div class="site_name">Easemind</div>  
-      </div>
-      
-      
     <div class="container">
-     <!--processes form when submitted; where data is sent when form is submitted-->
-     <?php if ($is_invalid): ?>
-        <em>Invalid login</em>
-    <?php endif; ?>
-
-     <form method="post">
-        <h1>Log In</h1>
-
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"
-            value="<?= htmlspecialchars ($_POST["email"] ?? "") ?>">       <!--leaves the email in box if login is invalid-->
+        <div class="login-box">
+            <h1>Welcome to Easemind</h1>
+            <form method="post">
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Log in</button>
+                <div class="extra-links">
+                    <a href="forgot-password.php">Forgot password?</a>
+                </div>
+                <?php if (isset($is_invalid) && $is_invalid): ?>
+                    <p class="error-message">Invalid login. Please try again.</p>
+                <?php endif; ?>
+            </form>
         </div>
-        
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <button>Log in</button>
-        
-    </form>
-
-    <a href="forgot-password.php">Forgot password?</a>
-</div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
 
+
 <style>
     body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
 
-    .text_box {
-        vertical-align: top center;
-        text-align: center;
-        padding: 20px;
-        border: 2px solid black; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        position: absolute; 
-        top: 0;
-        left: 10;
-        width: 350px;
-    }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    h1 {
-        text-align: center;
-    }
+.login-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
 
-    form {
-        width: 400px ; 
-    }
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
 
-    
-    label {
-        display: block;
-        margin-bottom: 8px;
-    }
+.input-group {
+    margin-bottom: 20px;
+}
 
-    input {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-        margin-bottom: 16px;
-    }
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
 
-    button {
-        background-color: white;
-        color: red;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border: 2px solid red; 
-    }
+input {
+    width: calc(100% - 40px);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+}
 
-    button:hover {
-        background-color: #e9eff1;
-    }
+button {
+    width: calc(100% - 40px);
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.extra-links {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
     
 </style>
