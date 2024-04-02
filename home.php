@@ -29,8 +29,10 @@ if (isset($_SESSION["user_id"])) {
     alt="EaseMind Logo"
     style="width: 200px; height: 200px"
   />
+  
+    <p class="quote">"Your journey to mental wellness begins here."</p>
   <body>
-    
+  
     <?php if (isset($user)): ?>
         
         <p class="welcome-message">Welcome <?= " to EaseMind " . htmlspecialchars($user["name"]) ?></p>
@@ -39,20 +41,38 @@ if (isset($_SESSION["user_id"])) {
         
     <?php else: ?>
         
-        <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
+        <p class="welcome-message2">Please <a href="login.php" class="login-link">Log in</a> or <a href="signup.html" class="signup-link">sign up</a></p>
         
     <?php endif; ?>
+    
     
 </body>
 </html>
 <style>
+    .quote {
+    font-size: 20px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 40px;
+    transform: translateX(2px) translateY(50px);
+    text-align: center;
+}
+ 
      .welcome-message {
-    font-size: 50px; 
+    font-size: 55px; 
     font-weight: bold; 
     color: hwb(195 2% 2%);
     vertical-align: top;
     text-align: center;
-    transform: translateX(2px) translateY(-50px);
+    transform: translateX(2px) translateY(-110px);
+  }
+  .welcome-message2 {
+    font-size: 30px; 
+    font-weight: bold; 
+    color: hwb(195 2% 2%);
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(2px) translateY(40px);
   }
     .button {
     display: block;
@@ -68,7 +88,7 @@ if (isset($_SESSION["user_id"])) {
     transition: background-color 0.3s ease;
     border: 2px solid black;
     border-radius: 25px;
-    transform: translateX(670px) translateY(-50px)
+    transform: translateX(670px) translateY(-70px)
   }
 
   body {
