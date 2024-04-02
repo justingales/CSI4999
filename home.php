@@ -16,19 +16,24 @@ if (isset($_SESSION["user_id"])) {
 
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-</head>
-<body>
-    
-    <h1>Home</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Chat</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <img
+    class="logo"
+    src="EaseMindLogo.png"
+    alt="EaseMind Logo"
+    style="width: 200px; height: 200px"
+  />
+  <body>
     
     <?php if (isset($user)): ?>
         
-        <p>Welcome <?= htmlspecialchars($user["name"]) ?></p>
+        <p class="welcome-message">Welcome <?= " to EaseMind " . htmlspecialchars($user["name"]) ?></p>
         <p><a href="chatbot.html" class="button">Chat Bot</a> </p>
         <p><a href="logout.php" class= "button">Log out</a></p>
         
@@ -41,31 +46,43 @@ if (isset($_SESSION["user_id"])) {
 </body>
 </html>
 <style>
-    
-body{
+     .welcome-message {
+    font-size: 50px; 
+    font-weight: bold; 
+    color: hwb(195 2% 2%);
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(2px) translateY(-50px);
+  }
+    .button {
+    display: block;
+    text-align: center;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #0792ee;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    border-radius: 25px;
+    transform: translateX(670px) translateY(-50px)
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     width: 100%;
-}
+    overflow: hidden;
+  }
 
-.button {
-      display: block;
-      padding: 10px 20px;
-      margin: 10px auto;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: red;
-      background-color: white; 
-      border-color: black;
-      transition: background-color 0.3s ease;
-      border: 2px solid black; 
-      width: 90px;
-    }
-    h1 {
-        text-align: center;
-    }
+  .logo {
+    transform: translateX(650px);
+  }
 
-    p{
-        text-align: center;
-    }
 </style>
+
 
