@@ -7,12 +7,11 @@ from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
 
-# Initialize Flask app
 app = Flask(__name__)
 
 # Hugging Face API
-API_URL = "https://api-inference.huggingface.co/models/nlp4good/psych-search"
-API_TOKEN = "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"
+API_URL = "https://api-inference.huggingface.co/models/GRMenon/mental-health-mistral-7b-instructv0.2-finetuned-V2"
+API_TOKEN = "Bearer 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"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 CORS(app, resources={r"/query": {"origins": "*"}})
 
