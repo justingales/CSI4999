@@ -31,10 +31,12 @@ def query_proxy():
                 'headers': {
                     'Access-Control-Allow-Origin': '*'
                 },
-                'body': json.dumps({
-                    'message': response.json()
+                'body': json.dumps(response.json())
                 })
-            })
+              #  'body': json.dumps({
+              #      'message': response.json()
+              #  })
+          #  })
 
         elif response.status_code == 400:
             # TODO:
