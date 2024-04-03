@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
   form{
     vertical-align: top;
     text-align: center;
-    transform: translateX(-615px) translateY(80px);
+    transform: translateX(-800px) translateY(80px);
     color: black;
     display: block;
     margin-bottom: 10px;
@@ -172,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
   .text_box {
     vertical-align: top;
     text-align: center;
-    transform: translateX(-270px) translateY(-90px);
+    transform: translateX(-465px) translateY(-90px);
     color: hwb(195 2% 2%);
   }
 

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Chat</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Chat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
   <img
-    class="logo"
-    src="EaseMindLogo.png"
-    alt="EaseMind Logo"
-    style="width: 200px; height: 200px"
-  />
-  <body>
+class="logo"
+src="EaseMindLogo.png"
+alt="EaseMind Logo"
+style="width: 200px; height: 200px"
+/>
+  <div class="container">
     <div class="text_box">
       <div class="site_name" style="font-size: 90px">EaseMind</div>
       <!--website name in box-->
@@ -33,25 +34,21 @@
         cols="105"
         rows="15"
       ></textarea>
+      <input type="text" name="message-input" id="message-input" placeholder="Type your message...">
+      <button id="send-output">Send</button>
     </div>
+  </div>
 
-    <div id="chat-container">
-      <ul id="messages"></ul>
-      <input class="inputBox" type="text" name="message-input" id="message-input" placeholder="Type your message..."/>
-      <div class="sendButton">
-        <button type="submit" id="send-button">Send</button>
-      </div>
-    </div>
-    <div>
-      <p><a href="" class="helplinechatButton">Helpline Information</a></p>
-      <p><a href="" class="resourcechatButton">Resources Near Me</a></p>
-      <p><a href="" class="qoutechatButton">Positive Quote</a></p>
-    </div>
-    <div>
-      <p><a href="logout.php" class="logoutButton">Log out</a></p>
-    </div>
-    <script src="js/script.js"></script>
-  </body>
+  <div>
+    <p><a href="" class="helplinechatButton">Helpline Information</a></p>
+    <p><a href="" class="resourcechatButton">Resources Near Me</a></p>
+    <p><a href="#" class="quotechatButton">Positive Quote</a></p>
+  </div>
+  <div>
+    <p><a href="logout.php" class="logoutButton">Log out</a></p>
+  </div>
+  <script src="js/script.js"></script>
+</body>
 </html>
 
 <style>
@@ -60,41 +57,58 @@
     margin: 0;
     padding: 0;
     width: 2600px;
+    text-align: center;
+    overflow: hidden;
   }
 
   .outputIcon {
-    transform: translateX(1300px) translateY(-75px);
+    transform: translateX(450px) translateY(-75px);
   }
 
   .output {
-    transform: translateX(580px) translateY(-125px);
+    transform: translateX(0px) translateY(-125px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  #chat-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 50px;
-    transform: translateY(-115px) translateX(-975px);
+  .output textarea {
+    margin-bottom: 10px;
   }
 
-  .inputBox {
-    width: 500px;
+  .output input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
   }
 
-  .sendButton {
-    transform: translateX(515px) translateY(-21px);
+  .output button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   .logo {
-    transform: translateX(650px);
+    transform: translateX(-350px);
   }
 
   .text_box {
     vertical-align: top;
     text-align: center;
-    transform: translateX(-550px) translateY(-25px);
     color: hwb(195 2% 2%);
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 75px auto;
+    padding: 20px;
+    border-radius: 50px;
+    transform: translateY(-115px) translateX(-350px);
   }
 
   #messages {
@@ -142,7 +156,7 @@
     justify-content: center;
   }
 
-  .qoutechatButton {
+  .quotechatButton {
     display: block;
     padding: 10px 20px;
     margin: 10px auto;
