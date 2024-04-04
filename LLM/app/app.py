@@ -18,7 +18,7 @@ CORS(app, resources={r"/query": {"origins": "*"}})
 
 @app.route('/query', methods=['POST'])
 def query_proxy():
-
+    logging.debug("test")
     try:
         data = request.get_json()
         logging.debug(f"Incoming JSON: {data}")
@@ -31,12 +31,10 @@ def query_proxy():
                 'headers': {
                     'Access-Control-Allow-Origin': '*'
                 },
-                'body': json.dumps(response.json())
+                'body': json.dumps({
+                    'message': response.json()
                 })
-              #  'body': json.dumps({
-              #      'message': response.json()
-              #  })
-          #  })
+            })
 
         elif response.status_code == 400:
             # TODO:
@@ -74,4 +72,4 @@ def query_proxy():
 
 if __name__ == '__main__':
     # Run the Flask app
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)
