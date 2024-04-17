@@ -1,7 +1,7 @@
 <?php
 //Ashley Murad
 $host = "localhost";
-$dbname = "login_db";
+$dbname = "easeminddb";
 $username = "root";
 $password = "";
 
