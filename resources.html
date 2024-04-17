@@ -1,127 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mental Health Resources</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-      background-color: #eaf4ff;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .homeButton {
-      display: block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #007bff;
-      border: 2px solid #007bff;
-      border-radius: 25px;
-      transition: background-color 0.3s ease;
+
+  <script>
+    function getLocation() {        //gets user's current position in latitude and longitude
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
     }
 
-    .homeButton:hover {
-      background-color: #0056b3;
+    function showPosition(position) {
+      var user_lat = position.coords.latitude;
+      var user_lon = position.coords.longitude;
+
+      // Redirect to PHP script passing user's location to it
+      window.location.href = "resources.php?user_lat=" + user_lat + "&user_lon=" + user_lon;
     }
-  </style>
+  </script>
+
 </head>
+
 <body>
-  <div class="container">
-    <h1>Mental Health Resources</h1>
+  <a href="" class="aboutButton">About Us</a>
+  <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px" />
+  <a href="index.html" class="homeButton">Home</a>
 
-    <h2>Crisis Hotlines:</h2>
-    <ul>
-      <li>National Suicide Prevention Lifeline: <a href="tel:1-800-273-8255">1-800-273-TALK (1-800-273-8255)</a></li>
-      <li>Crisis Text Line: Text "HELLO" to 741741 (24/7 crisis support via text message)</li>
-    </ul>
-
-    <h2>Online Counseling and Support:</h2>
-    <ul>
-      <li>BetterHelp: <a href="https://www.betterhelp.com/">https://www.betterhelp.com/</a></li>
-      <li>Talkspace: <a href="https://www.talkspace.com/">https://www.talkspace.com/</a></li>
-      <li>7 Cups: <a href="https://www.7cups.com/">https://www.7cups.com/</a></li>
-    </ul>
-
-    <h2>Information and Education:</h2>
-    <ul>
-      <li>National Alliance on Mental Illness (NAMI): <a href="https://www.nami.org/">https://www.nami.org/</a></li>
-      <li>Mental Health America (MHA): <a href="https://www.mhanational.org/">https://www.mhanational.org/</a></li>
-      <li>Psychology Today: <a href="https://www.psychologytoday.com/us">https://www.psychologytoday.com/us</a></li>
-    </ul>
-
-    <h2>Apps and Tools:</h2>
-    <ul>
-      <li>Headspace: <a href="https://www.headspace.com/">https://www.headspace.com/</a></li>
-      <li>Calm: <a href="https://www.calm.com/">https://www.calm.com/</a></li>
-      <li>Moodpath: <a href="https://www.moodpath.com/en/">https://www.moodpath.com/en/</a></li>
-    </ul>
-
-    <h2>Support Groups and Communities:</h2>
-    <ul>
-      <li>SupportGroups.com: <a href="https://www.supportgroups.com/">https://www.supportgroups.com/</a></li>
-      <li>Reddit:
-        <ul>
-          <li><a href="https://www.reddit.com/r/Anxiety/">r/Anxiety</a></li>
-          <li><a href="https://www.reddit.com/r/Depression/">r/Depression</a></li>
-          <li><a href="https://www.reddit.com/r/PTSD/">r/PTSD</a></li>
-        </ul>
-      </li>
-    </ul>
-
-    <h2>Additional Resources:</h2>
-    <ul>
-      <li>SAMHSA's National Helpline: 1-800-662-HELP (1-800-662-4357) - <a href="https://www.samhsa.gov/find-help/national-helpline">https://www.samhsa.gov/find-help/national-helpline</a></li>
-      <li>American Psychological Association (APA): <a href="https://www.apa.org/">https://www.apa.org/</a></li>
-    </ul>
-
-    <h2>Articles and Reading Material:</h2>
-    <ul>
-      <li>Verywell Mind: <a href="https://www.verywellmind.com/">https://www.verywellmind.com/</a></li>
-      <li>Mind: <a href="https://www.mind.org.uk/">https://www.mind.org.uk/</a></li>
-    </ul>
-
-    <h2>Self-Help and Coping Strategies:</h2>
-    <ul>
-        
-      <li>DBT Self-Help: <a href="https://www.dbtselfhelp.com/">https://www.dbtselfhelp.com/</a></li>
-      <li>Psych Central: <a href="https://psychcentral.com/">https://psychcentral.com/</a></li>
-    </ul>
-
-    <h2>Disclaimer:</h2>
-    <p>Note that while these resources can provide valuable support and information, they are not a substitute for professional medical advice or treatment. If you are in a crisis or experiencing severe symptoms, please seek immediate help from a professional or call emergency services.</p>
+  <div class="text_box">
+    <div class="site_name" style="font-size: 90px">EaseMind</div>
   </div>
-    
-    <a href="index.html" class="homeButton">Back to Home</a>
+
+  <h2>Click the button below to find Mental Health Resources near you:</h2>
+  <button onclick="getLocation()">Find Resources</button> <!--button click calls the function-->
+  <p>"You don't need to see the whole staircase, just take the first step."</p>
 </body>
+
 </html>
+
+
+<style>
+  button {
+    background-color: #0792ee;
+    color: white;
+    border: 2px solid black;
+    border-radius: 25%;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid white;
+    width: 600px;
+    transform: translateY(100px) translateX(-728px);
+    font-size: 18px;
+  }
+
+  button:hover {
+    background-color: hwb(150 32% 11%);
+  }
+
+  .aboutButton {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    width: 2000px;
+    text-align: center;
+    transform: translateY(-190px) translateX(100px);
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    border-radius: 25px;
+    align-items: center;
+  }
+
+  .homeButton {
+    display: block;
+    padding: 10px 20px;
+    width: 2000px;
+    text-align: center;
+    transform: translateY(-190px) translateX(350px);
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-color: black;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+    border-radius: 25px;
+  }
+
+  h2 {
+    position: absolute;
+    left: 50%;
+    color: hwb(150 32% 11%);
+    transform: translateY(-10px) translateX(-350px);
+  }
+
+  p {
+    position: absolute;
+    left: 50%;
+    color: black;
+    transform: translateY(270px) translateX(-270px);
+    font-style: italic;
+    font-size: 19px;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: translateX(50px);
+
+  }
+
+  .text_box {
+    vertical-align: center;
+    text-align: center;
+    transform: translateX(-475px) translateY(-125px);
+    color: hwb(195 2% 2%);
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    transform: translateY(-250px) translateX(225px);
+  }
+</style>
