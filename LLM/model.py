@@ -66,9 +66,9 @@ def interact_with_assistant(client, assistant_id, thread_id):
 
 
 def start_chat():
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="key")
     thread = client.beta.threads.create()
-    assistant = client.beta.assistants.retrieve(assistant_id="asst_d0nr4Yn8IRN4PsNa6STno8ks")
+    assistant = client.beta.assistants.retrieve(assistant_id="assistant")
 
     print("Chat session started. Type 'quit' to exit.")
 
