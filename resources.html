@@ -5,6 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mental Health Resources</title>
+</head>
+
+<body>
+
+  <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px" />
+  <div class="button_row">
+    <a href="about.html" class="aboutButton">About Us</a>
+    <a href="index.html" class="homeButton">Home</a>
+  </div>
+
+
+  <div class="text_box">
+    <div class="site_name" style="font-size: 90px">EaseMind</div>
+  </div>
+
+  <h2>Click the button below to find Mental Health Resources near you:</h2>
+  <button onclick="getLocation()">Find Resources</button>
+  <p>"You don't need to see the whole staircase, just take the first step."</p>
 
   <script>
     function getLocation() {        //gets user's current position in latitude and longitude
@@ -23,38 +41,29 @@
       window.location.href = "resources.php?user_lat=" + user_lat + "&user_lon=" + user_lon;
     }
   </script>
-
-</head>
-
-<body>
-  <a href="about.html" class="aboutButton">About Us</a>
-  <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px" />
-  <a href="index.html" class="homeButton">Home</a>
-
-  <div class="text_box">
-    <div class="site_name" style="font-size: 90px">EaseMind</div>
-  </div>
-
-  <h2>Click the button below to find Mental Health Resources near you:</h2>
-  <button onclick="getLocation()">Find Resources</button> <!--button click calls the function-->
-  <p>"You don't need to see the whole staircase, just take the first step."</p>
 </body>
 
 </html>
 
-
 <style>
+  .button_row {
+    display: flex;
+    gap: 80px;
+    /* Adjust space between buttons*/
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    /* Increased space below the button row */
+  }
+
+
   button {
     background-color: #0792ee;
     color: white;
     border: 2px solid black;
-    border-radius: 25%;
+    border-radius: 25px;
     padding: 10px 20px;
-    border: none;
     cursor: pointer;
-    border: 2px solid white;
-    width: 600px;
-    transform: translateY(100px) translateX(-728px);
     font-size: 18px;
   }
 
@@ -62,78 +71,59 @@
     background-color: hwb(150 32% 11%);
   }
 
-  .aboutButton {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    width: 2000px;
-    text-align: center;
-    transform: translateY(-190px) translateX(100px);
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-    align-items: center;
-  }
-
+  .aboutButton,
   .homeButton {
-    display: block;
     padding: 10px 20px;
-    width: 2000px;
-    text-align: center;
-    transform: translateY(-190px) translateX(350px);
-    margin: 10px;
+    margin: 5px;
+    /* Adjusts space around buttons */
     font-size: 16px;
+    text-align: center;
     text-decoration: none;
     color: black;
     background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
     border: 2px solid black;
     border-radius: 25px;
+    transition: background-color 0.3s ease;
   }
 
   h2 {
-    position: absolute;
-    left: 50%;
     color: hwb(150 32% 11%);
-    transform: translateY(-10px) translateX(-350px);
+    text-align: center;
+    margin-bottom: 30px;
+    /* Adds space below heading */
   }
 
   p {
-    position: absolute;
-    left: 50%;
     color: black;
-    transform: translateY(270px) translateX(-270px);
+    text-align: center;
     font-style: italic;
     font-size: 19px;
+    margin-bottom: 30px;
+    /* Adds space below the paragraph */
   }
 
   body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* Aligns content towards the bottom */
     height: 100vh;
     margin: 0;
-    width: 100%;
     overflow: hidden;
-    transform: translateX(50px);
-
+    background-color: #f0f0f0; 
   }
 
   .text_box {
-    vertical-align: center;
     text-align: center;
-    transform: translateX(-475px) translateY(-125px);
     color: hwb(195 2% 2%);
     margin-bottom: 20px;
   }
 
   .logo {
-    transform: translateY(-250px) translateX(225px);
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+    /* Moves the logo further down */
   }
 </style>

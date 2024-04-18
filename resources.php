@@ -9,11 +9,12 @@
 </head>
 
 <body>
-    <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px" />
-    <div class="text_box">
-        <div class="site_name" style="font-size: 70px">EaseMind</div>
+   <div class="header">
+        <div class="logo-container">
+            <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px" />
+            <div class="site_name" style="font-size: 70px; color: hwb(195 2% 2%);">EaseMind</div>
+        </div>
     </div>
-
     <div class="container">
         <h2>Nearest Resources:</h2>
         <?php
@@ -74,84 +75,92 @@
 </body>
 
 </html>
+
 <style>
-    .btn-container {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-    }
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-    .btn {
-        padding: 10px 20px;
-        margin: 10px 10px;
-        
-        cursor: pointer;
-        background-color: #0792ee;
-        color: white;
-        border: 2px solid hwb(177 38% 20%);
-        border-radius: 25%;
-        transform: translateY(290px) translateX(-550px);
-        width: 200px;
-        text-align: center;
-    }
+.container {
+    width: 680px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow-y: auto;
+    max-height: 300px; 
+    position: relative;
+}
 
-    .btn:hover {
-        background-color: hwb(150 32% 11%);
-    }
+.logo {
+    width: 150px; /* Adjusted logo width */
+    height: 150px; /* Adjusted logo height */
+    margin-bottom: 15px; /* Increased margin bottom */
+}
 
-    h2 {
-        color: hwb(195 2% 2%);
-    }
+.btn-container {
+    position: absolute;
+    bottom: 18px; /* Increased bottom spacing */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-    }
+.btn {
+    padding: 8px 16px;
+    margin: 10px 6px; /* Increased margin */
+    cursor: pointer;
+    background-color: #0792ee;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 15px;
+    width: auto;
+    font-size: 16px;
+}
 
-    .container {
-        width: 800px;
-        height: 300px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #fff;
-        overflow-y: auto;
-        transform: translateY(90px) translateX(-60px);
-        max-width: 100%
-    }
 
-    .facility {
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-    }
+.btn:hover {
+    background-color: hwb(150 32% 11%);
+}
 
-    .facility a {
-        color: hwb(177 38% 20%);
-        text-decoration: underline;
-    }
+h2 {
+    color: hwb(195 2% 2%);
+    text-align: center;
+}
 
-    .facility a:hover {
-        color: hwb(195 2% 2%);
-    }
+.facility {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
-    .text_box {
-        vertical-align: center;
-        text-align: center;
-        transform: translateX(380px) translateY(-125px);
-        color: hwb(195 2% 2%);
-        margin-bottom: 10px;
-    }
+.facility a {
+    color: hwb(177 38% 20%);
+    text-decoration: underline;
+}
 
-    .logo {
-        transform: translateY(-250px) translateX(650px);
-    }
-</style>
+.facility a:hover {
+    color: hwb(195 2% 2%);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site_name {
+    color: #333;
+    margin-top: -40px; /* Adjust to move the site_name to the top */
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+    </style>
