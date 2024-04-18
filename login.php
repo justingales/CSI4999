@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-  <a href="" class="aboutButton">About Us</a>
+  <a href="about.html" class="aboutButton">About Us</a>
 
 
     <img
