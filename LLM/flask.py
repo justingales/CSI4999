@@ -9,7 +9,7 @@ client = openai.OpenAI(api_key="key")
 def send_message():
     content = request.json['message']
     thread_id = request.json['thread_id']  # Thread ID  per user session
-    assistant_id = "asst_d0nr4Yn8IRN4PsNa6STno8ks"
+    assistant_id = "assistant"
     run = send_message_and_start_run(client, assistant_id, content, thread_id)
     return jsonify({"run_id": run.id})
 
