@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Chat</title>
+</head>
+
+<body>
+  <div class="container">
+    <img class="logo" src="{{ url_for('static', filename='images/EaseMindLogo.png') }}" alt="EaseMind Logo"
+      style="width: 200px; height: 200px" />
+    <div class="button_row">
+      <a href="http://localhost:80/csi4999/about.html" class="aboutButton">About Us</a>
+      <a href="http://localhost:80/csi4999/resources.html" class="resourceButton">Resources</a>
+      <a href="#" class="quotechatButton">Positive Quote</a>
+      <a href="http://localhost:80/csi4999/logout.php" class="logoutButton">Log out</a>
+    </div>
+
+    <div class="text_box">
+      <div class="site_name" style="font-size: 80px;">EaseMind</div>
+    </div>
+  </div>
+  <div class="container">
+    <img class="outputIcon" src="{{ url_for('static', filename='images/outputIcon.png') }}" alt="output Icon"
+      style="width: 200px; height: 200px" />
+    <div id="chat-container">
+      <div id="chat-box"></div>
+      <form id="message-form">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .outputIcon {
+    transform: translateX(650px) translateY(-175px);
+  }
+
+  #chat-container {
+    transform: translateX(0px) translateY(-225px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #chat-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    height: 350px;
+    overflow-y: scroll;
+    margin-bottom: 0px;
+    text-align: left;
+    width: 100%;
+    max-width: 1000px;
+    /* Adjust the max-width as needed */
+  }
+
+  #message-form {
+    display: flex;
+    align-items: center;
+  }
+
+  #user-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+    /* Space below the logo */
+  }
+
+  .text_box {
+    text-align: center;
+    margin-bottom: 10px;
+    color: hwb(195 2% 2%);
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Horizontally center the container */
+    padding: 20px;
+    border-radius: 50px;
+  }
+
+  .button_row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    /* Space below the button row */
+  }
+
+
+  .aboutButton,
+  .resourceButton,
+  .quotechatButton,
+  .logoutButton {
+    display: block;
+    width: 200px;
+    /* Adjust the button width as needed */
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+
+  .aboutButton:hover,
+  .resourceButton:hover,
+  .quotechatButton:hover,
+  .logoutButton:hover {
+    background-color: #cbcecf;
+  }
+
+  #messages {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #messages li {
+    margin-bottom: 10px;
+  }
+</style>
