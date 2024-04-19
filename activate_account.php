@@ -42,6 +42,9 @@ $stmt->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Activated</title>
     <style>
+      .site_name{
+        font-family: "Poppins", sans-serif;
+      }
   body {
     display: flex;
     align-items: center;
@@ -49,6 +52,7 @@ $stmt->execute();
     height: 100vh;
     margin: 0;
     width: 100%;
+    background-color: #f0f0f0; 
   }
 
   .text_box {
@@ -66,12 +70,13 @@ $stmt->execute();
   p{
     color:rgb(22, 130, 156);
   }
-</style>
-    <style>
-        .centered-message {
+  
+  .centered-message {
             text-align: center;
         }
-    </style>
+
+</style>
+
 </head>
 <body><img
   class="logo"

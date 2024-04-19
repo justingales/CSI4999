@@ -78,6 +78,7 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     height: 100vh;
     margin: 0;
     width: 100%;
+    background-color: #f0f0f0; 
   }
   button {
     display: block;
@@ -100,7 +101,6 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     text-align: left; 
   }
   form{
-    vertical-align: top;
     text-align: center;
     transform: translateX(-360px) translateY(80px);
     color: black;
@@ -116,6 +116,7 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     margin-bottom: 10px;
     width: 230px;
     height: 20px;
+  
   }
  
   .text_box {
@@ -127,6 +128,9 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 
   .logo {
     transform: translateY(-215px) translateX(260px);
+  }
+  .site_name{
+    font-family: "Poppins", sans-serif;
   }
 
 </style>

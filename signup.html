@@ -1,33 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Sign Up</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="/js/validation.js" defer></script>
-    <script
-      src="https://unpkg.com/just-validate@2.4.0/dist/js/just-validate.min.js"
-      defer
-    ></script>
-  </head>
-
-  <body>
-    <a href="" class="aboutButton">About Us</a>
-
-    <img
-      class="logo"
-      src="EaseMindLogo.png"
-      alt="EaseMind Logo"
-      style="width: 200px; height: 200px"
-    />
-
-    <a href="resources.html" class="resourceButton">Resources</a>
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+  <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px">
     <div class="text_box">
       <div class="site_name" style="font-size: 90px">EaseMind</div>
-      <!--website name in box-->
+      <!-- Website name in box -->
+      <div class="button_row">
+        <a href="about.html" class="aboutButton">About Us</a>
+        <a href="resources.html" class="resourceButton">Resources</a>
+      </div>
     </div>
+  </div>
 
     <form action="signup_process.php" method="post" id="signup" novalidate>
       <!--processes form when submitted; where data is sent when form is submitted-->
@@ -63,109 +53,85 @@
 </html>
 
 <style>
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    width: 2000px;
-    overflow: hidden;
-    transform: translateX(200px);
-  }
+  .aboutButton, .resourceButton {
+  display: block;
+  padding: 10px 20px;
+  margin: 2px 25px; /* Add space between buttons */
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-color: black;
+  transition: background-color 0.3s ease;
+  border: 2px solid black;
+  border-radius: 25px;
+}
 
-  .text_box {
-    vertical-align: top;
-    text-align: center;
-    transform: translateX(-750px) translateY(-90px);
-  }
+body {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  background-color: #f0f0f0; 
+}
 
-  .site_name {
-    font-size: 36px;
-    color: hwb(195 2% 2%);
-  }
-  .container {
-    text-align: center;
-    color: blue;
-  }
+.container {
+  text-align: center;
+}
 
-  .aboutButton {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    width: 800px;
-    text-align: center;
-    transform: translateY(-190px) translateX(100px);
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-    align-items: center;
-  }
+.logo {
+  margin-bottom: 10px; /* Add space below the logo */
+}
 
-  .logo {
-    transform: translateY(-215px) translateX(100px);
-  }
+.text_box {
+  margin-bottom: 20px; /* Add space below the text box */
+  color: hwb(195 2% 2%);
+  text-align: center;
+}
 
-  .resourceButton {
-    display: block;
-    padding: 10px 20px;
-    width: 800px;
-    text-align: center;
-    transform: translateY(-190px) translateX(100px);
-    margin: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-  }
+form {
+  margin-top: 5px; /* Add space above the form */
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
 
-  .userInput {
-    transform: translateY(140px) translateX(-950px);
-    width: 350px;
-  }
+form label,
+form input {
+  display: block; /* Set display to block to stack elements */
+  text-align: left;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 25px;
+}
+.site_name {
+  font-size: 90px;
+  margin-bottom: 20px; /* Add space below the site name */
+  font-family: "Poppins", sans-serif;
+}
+.button_row {
+  display: flex;
+  justify-content: center; /* Center items horizontally within the row */
+}
 
-  h1 {
-    text-align: center;
-  }
+button {
+  display: block;
+  text-align: center;
+  width: 100px;
+  padding: 10px 20px;
+  margin: 10px auto; /* Center horizontally */
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #0792ee;
+  border-color: black;
+  transition: background-color 0.3s ease;
+  border: 2px solid black;
+  border-radius: 25px;
+}
 
-  form {
-    width: 300px;
-    transform: translateX(-50%);
-  }
 
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 16px;
-  }
-
-  button {
-    background-color: #0792ee;
-    color: white;
-    border: 2px solid black;
-    border-radius: 25%;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border: 2px solid white;
-  }
-
-  button:hover {
-    background-color: #e9eff1;
-  }
 </style>

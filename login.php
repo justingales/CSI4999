@@ -35,27 +35,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-  <a href="about.html" class="aboutButton">About Us</a>
-
-
-    <img
-      class="logo"
-      src="EaseMindLogo.png"
-      alt="EaseMind Logo"
-      style="width: 200px; height: 200px"
-    />
-    <a href="resources.html" class="resourceButton">Resources</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+  <img class="logo" src="EaseMindLogo.png" alt="EaseMind Logo" style="width: 200px; height: 200px">
     <div class="text_box">
       <div class="site_name" style="font-size: 90px">EaseMind</div>
-      <!--website name in box-->
+      <!-- Website name in box -->
+      <div class="button_row">
+        <a href="about.html" class="aboutButton">About Us</a>
+        <a href="resources.html" class="resourceButton">Resources</a>
+      </div>
     </div>
+  </div>
     <div class="container">
      <!--processes form when submitted; where data is sent when form is submitted-->
      <?php if ($is_invalid): ?>
@@ -86,98 +83,91 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {    //checks if the form has been su
 </html>
 
 <style>
-    .forgot-password {
+.aboutButton, .resourceButton {
+  display: block;
+  padding: 10px 20px;
+  margin: 2px 25px; /* Add space between buttons */
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-color: black;
+  transition: background-color 0.3s ease;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  background-color: #f0f0f0; 
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 10px; /* Add space below the logo */
+}
+
+.text_box {
+  margin-bottom: 20px; /* Add space below the text box */
+  color: hwb(195 2% 2%);
+  text-align: center;
+}
+
+form {
+  margin-top: 20px; /* Add space above the form */
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
+form label,
+form input {
+  display: block; /* Set display to block to stack elements */
+  text-align: left;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 25px;
+}
+.site_name {
+  font-size: 90px;
+  margin-bottom: 20px; /* Add space below the site name */
+  font-family: "Poppins", sans-serif;
+}
+.button_row {
+  display: flex;
+  justify-content: center; /* Center items horizontally within the row */
+}
+
+button {
+  display: block;
+  text-align: center;
+  width: 100px;
+  padding: 10px 20px;
+  margin: 10px auto; /* Center horizontally */
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #0792ee;
+  border-color: black;
+  transition: background-color 0.3s ease;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.forgot-password {
   display: inline-block;
   text-decoration: none;
-  margin-right: 1px; 
+  margin-right: 1px;
 }
-     .aboutButton {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    width: 2000px;
-    text-align: center;
-    transform: translateY(-190px) translateX(265px);
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-    align-items: center;
-  }
 
-  .resourceButton {
-    display: block;
-    padding: 10px 20px;
-    width: 2000px;
-    text-align: center;
-    transform: translateY(-190px) translateX(400px);
-    margin: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    width: 100%;
-  }
-  button {
-    display: block;
-    text-align: center;
-    width: 100px;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: #0792ee;
-    border-color: black;
-    transition: background-color 0.3s ease;
-    border: 2px solid black;
-    border-radius: 25px;
-  }
-
-  form{
-    vertical-align: top;
-    text-align: center;
-    transform: translateX(-800px) translateY(80px);
-    color: black;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-
-  form label,
-  form input {
-    display: block; /* Set display to block to stack elements */
-    text-align: left;
-    margin-bottom: 10px;
-    width: 300px;
-    height: 25px;
-  }
- 
-  .text_box {
-    vertical-align: top;
-    text-align: center;
-    transform: translateX(-465px) translateY(-90px);
-    color: hwb(195 2% 2%);
-  }
-
-  .logo {
-    transform: translateY(-215px) translateX(330px);
-  }
 
 </style>

@@ -72,6 +72,7 @@ $stmt->execute();
     height: 100vh;
     margin: 0;
     width: 100%;
+    background-color: #f0f0f0; 
   }
 
   .text_box {
@@ -88,6 +89,9 @@ $stmt->execute();
 
   p{
     color:rgb(22, 130, 156);
+  }
+  .site_name{
+    font-family: "Poppins", sans-serif;
   }
 </style>
     <style>

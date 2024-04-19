@@ -64,6 +64,7 @@ if ($mysqli->affected_rows) {
     height: 100vh;
     margin: 0;
     width: 100%;
+    background-color: #f0f0f0; 
   }
 
   .text_box {
@@ -79,7 +80,11 @@ if ($mysqli->affected_rows) {
   }
 
   p{
+    font-size: 25px;
     color:rgb(22, 130, 156);
+  }
+  .site_name{
+    font-family: "Poppins", sans-serif;
   }
 </style>
 

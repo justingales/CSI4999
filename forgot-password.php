@@ -41,6 +41,7 @@
     height: 100vh;
     margin: 0;
     width: 100%;
+    background-color: #f0f0f0; 
   }
   button {
     display: block;
@@ -59,7 +60,6 @@
   }
 
   form{
-    vertical-align: top;
     text-align: center;
     transform: translateX(-280px) translateY(80px);
     color: black;
@@ -88,4 +88,7 @@
     transform: translateY(-215px) translateX(330px);
   }
 
+.site_name{
+  font-family: "Poppins", sans-serif;
+}
 </style>

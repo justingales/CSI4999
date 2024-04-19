@@ -157,6 +157,7 @@ h2 {
 .site_name {
     color: #333;
     margin-top: -40px; /* Adjust to move the site_name to the top */
+    font-family: "Poppins", sans-serif;
 }
 
 .logo {
