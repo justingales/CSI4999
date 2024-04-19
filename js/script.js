@@ -2,10 +2,49 @@ document.addEventListener("DOMContentLoaded", function() {
     const messages = document.getElementById('messages');
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
+    
+ //Generates random number for how much to shift input string
+  function getRandomInt(min, max) {
+    const minimum = Math.ceil(min);
+    const maximum = Math.floor(max);
+    return Math.floor(Math.random() * (maximum - minimum) + minimum);
+  }
+
+  //function to encrypt input string
+  function encryptMsg(str, shift) {
+    let encreptedStr = " ";
+
+    for (let i = 0; i < str.length; i++) {
+      let charCode = str.charCodeAt(i);
+
+      if (charCode >= 65 && charCode <= 90) {
+        // uppercase letters
+        encreptedStr += String.fromCharCode(
+          ((charCode - 65 + shift) % 26) + 65
+        );
+      } else if (charCode >= 97 && charCode <= 122) {
+        // lowercase letters
+        encreptedStr += String.fromCharCode(
+          ((charCode - 97 + shift) % 26) + 97
+        );
+      } else {
+        // non-alphabetic characters
+        encreptedStr += str.charAt(i);
+      }
+    }
+    return encreptedStr;
+  }
 
 sendButton.addEventListener('click', function() {
     console.log("test")
     const message = messageInput.value.trim();
+
+    //encrypted input that will go into a database
+    const encryptedMessage = encryptMsg(
+      messageInput.value.trim(),
+      getRandomInt(2, 24)
+    );
+    
     if (message !== '') {
         // Create list item to show the message
         //const li = document.createElement('li');
