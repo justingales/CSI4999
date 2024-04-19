@@ -3,7 +3,7 @@ from model import send_message_and_start_run, fetch_run_results
 import openai
 
 app = Flask(__name__)
-client = openai.OpenAI(api_key="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")
+client = openai.OpenAI(api_key="key")
 
 @app.route('/send', methods=['POST'])
 def send_message():
