@@ -35,8 +35,8 @@ if (isset($_SESSION["user_id"])) {
   
     <?php if (isset($user)): ?>
         
-        <p class="welcome-message">Welcome <?= " to EaseMind" . " " . htmlspecialchars($user["name"]) ."!"?> </p>
-        <p><a href="chatbot.html" class="button">Chat Bot</a> </p>
+        <p class="welcome-message">Welcome <?= " to EaseMind " . htmlspecialchars($user["name"]) ?></p>
+        <p><a href="http://localhost:5000" class="button">Chat Bot</a> </p>
         <p><a href="logout.php" class= "button">Log out</a></p>
         
     <?php else: ?>
@@ -49,63 +49,59 @@ if (isset($_SESSION["user_id"])) {
 </body>
 </html>
 <style>
-         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center; /* Center align text */
-    background-color: #f0f0f0; 
-}
-
-.container {
-    margin: 0 auto; /* Center the container horizontally */
-    max-width: 600px; /* Adjust as needed */
-    padding: 20px;
-}
-
-.logo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 60px;
-}
-a {
-    color: hwb(150 32% 11%); 
-}
-
-.quote {
+    .quote {
     font-size: 20px;
     font-style: italic;
     color: #555;
     margin-bottom: 40px;
+    transform: translateX(2px) translateY(50px);
+    text-align: center;
 }
-
-.welcome-message,
-.welcome-message2 {
-    font-size: 30px;
-    font-weight: bold;
+ 
+     .welcome-message {
+    font-size: 55px; 
+    font-weight: bold; 
     color: hwb(195 2% 2%);
-    margin-bottom: 20px;
-}
-
-.button {
-    display: inline-block; /* Display buttons as inline-block elements */
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(2px) translateY(-110px);
+  }
+  .welcome-message2 {
+    font-size: 30px; 
+    font-weight: bold; 
+    color: hwb(195 2% 2%);
+    vertical-align: top;
+    text-align: center;
+    transform: translateX(2px) translateY(40px);
+  }
+    .button {
+    display: block;
+    text-align: center;
+    width: 100px;
     padding: 10px 20px;
-    margin: 10px; /* Adjust margin as needed */
+    margin: 10px;
     font-size: 16px;
     text-decoration: none;
     color: white;
     background-color: #0792ee;
+    border-color: black;
+    transition: background-color 0.3s ease;
     border: 2px solid black;
     border-radius: 25px;
-    transition: background-color 0.3s ease;
-    width: auto; /* Set width to auto to make buttons adjust to content */
-    padding: 10px 65px; 
-}
+    transform: translateX(670px) translateY(-70px)
+  }
 
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
 
-.button:hover {
-    background-color: hwb(150 32% 11%);
-}
+  .logo {
+    transform: translateX(650px);
+  }
 
 </style>
 
