@@ -17,9 +17,16 @@ async function sendMessage(message) {
 
 // Function to add a message to the chat
 function addMessage(role, content) {
-    const messageElement = document.createElement('div');
-    messageElement.textContent = `${role}: ${content}`;
-    chatBox.appendChild(messageElement);
+    if (content.trim() !== '') {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = `${role}: ${content}`;
+        chatBox.appendChild(messageElement);
+
+        // Add a blank line separator
+        const separatorElement = document.createElement('div');
+        separatorElement.className = 'message-separator'; // Add a class for styling
+        chatBox.appendChild(separatorElement);
+    }
 }
 
 // Event listener for form submission
