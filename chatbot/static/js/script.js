@@ -21,6 +21,11 @@ function addMessage(role, content) {
         const messageElement = document.createElement('div');
         messageElement.textContent = `${role}: ${content}`;
         chatBox.appendChild(messageElement);
+
+        // Add a blank line separator
+        const separatorElement = document.createElement('div');
+        separatorElement.className = 'message-separator'; // Add a class for styling
+        chatBox.appendChild(separatorElement);
     }
 }
 
