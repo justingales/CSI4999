@@ -57,7 +57,7 @@ if ($stmt->execute()) {
     $mail->Subject = "Account Activation";
     $mail->Body = <<<END
 
-    Click <a href="http://localhost/Github/CSI4999/activate_account.php?token=$activation_token">here</a> 
+    Click <a href="http://localhost/csi4999/activate_account.php?token=$activation_token">here</a> 
     to activate your account.
 
     END;

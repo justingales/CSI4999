@@ -30,7 +30,7 @@ if ($mysqli->affected_rows) {
     $mail->Subject = "Password Reset";
     $mail->Body = <<<END
 
-    Click <a href="http://localhost/Github/CSI4999/reset-password.php?token=$token">here</a> 
+    Click <a href="http://localhost/csi4999/reset-password.php?token=$token">here</a> 
     to reset your password.
 
     END;
