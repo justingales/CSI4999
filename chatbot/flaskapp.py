@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from openai import OpenAI
+from openai import OpenAI, BadRequestError
 import time
 
 app = Flask(__name__)
@@ -15,16 +15,26 @@ def send_message_and_start_run(content):
     global thread_id
     global last_timestamp
 
-    message = client.beta.threads.messages.create(
-        thread_id=thread_id,
-        role="user",
-        content=content
-    )
+    try:
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id,
+            role="user",
+            content=content
+        )
+    except BadRequestError as e:
+        # Handle BadRequestError gracefully
+        print("BadRequestError:", e)
+        return None
 
-    run = client.beta.threads.runs.create(
-        thread_id=thread_id,
-        assistant_id=assistant.id,
-    )
+    try:
+        run = client.beta.threads.runs.create(
+            thread_id=thread_id,
+            assistant_id=assistant.id,
+        )
+    except BadRequestError as e:
+        # Handle BadRequestError gracefully
+        print("BadRequestError:", e)
+        return None
 
     return run
 
@@ -72,14 +82,19 @@ def send_message():
         return "Exiting chat..."
 
     run = send_message_and_start_run(user_input)
+    if run is None:  # If BadRequestError occurred, return empty string
+        return ""
+
     messages = fetch_run_results(run.id)
     assistant_response = ""
     for message in messages:
         if message.role == 'assistant':
             assistant_response = message.content[0].text.value
 
-    return assistant_response # Return's chatbot response
-
+    if assistant_response:  # Send message only if response is not empty
+        return assistant_response
+    else:
+        return ""
 
 if __name__ == "__main__":
     # Create a new thread for the chat
