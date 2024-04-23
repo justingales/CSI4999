@@ -81,8 +81,12 @@ function appendToChat(message) {
     const messageElement = document.createElement('div');
     messageElement.textContent = message;
     chatBox.appendChild(messageElement);
-}
 
+    // Add an empty line separator
+    const separatorElement = document.createElement('div');
+    separatorElement.className = 'message-separator'; // Add a class for styling
+    chatBox.appendChild(separatorElement);
+}
 
 //Generates random number for how much to shift input string
 function getRandomInt(min, max) {
